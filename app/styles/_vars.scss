@@ -1,0 +1,16 @@
+$width: 400px;          // The width of the whole board
+$tile-count: 4;         // The number of tiles per row/column
+$tile-padding: 15px;    // The padding between tiles
+$tile-size: ($width - $tile-padding * ($tile-count + 1)) / $tile-count;
+
+$colors:  #EEE4DA, // 2
+          #EAE0C8, // 4
+          #F59563, // 8
+          #3399ff, // 16
+          #ffa333, // 32
+          #cef030, // 64
+          #E8D8CE, // 128
+          #990303, // 256
+          #6BA5DE, // 512
+          #DCAD60, // 1024
+          #B60022; // 2048
