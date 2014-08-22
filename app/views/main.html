@@ -1,46 +1,48 @@
-<div class="content" ng-controller='GameController as ctrl'>
+<div id="content" ng-controller='GameController as ctrl'>
+  <!-- heading -->
   <div id="heading" class="row">
     <h1 class="title">ng-2048</h1>
     <div class="scores-container">
-      <div class="score-container">{{ ctrl.game.currentScore }}</div>
-      <div class="best-container">{{ ctrl.game.highScore }}</div>
+      <div class="score-container">{{ctrl.game.currentScore}}</div>
+      <div class="best-container">{{ctrl.game.highScore}}</div>
     </div>
   </div>
-</div>
 
-<!-- <div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#">About</a></li>
-    <li><a ng-href="#">Contact</a></li>
-  </ul>
-  <h3 class="text-muted">2048</h3>
-</div>
+  <!-- instructions -->
+  <div id="instructions" class="row">
+    Join the numbers and get to the <strong>2048</strong> tile!
+    <button ng-click='ctrl.newGame()' class="restart-button">New game</button>
+  </div>
+  
+  <div id="game-container">
+    <div grid ng-model='ctrl.game' class="row"></div>
 
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
+    <div id="game-over" ng-if="ctrl.game.gameOver" class="row game-overlay">
+      Game over
+
+      <div class="lower">
+        <a class="retry-button" ng-click='ctrl.newGame()'>Try again</a>
+      </div>
+    </div>
+
+    <div id="win" ng-if="ctrl.game.win" class="row game-overlay">
+      You win!
+
+      <div class="lower">
+        <a class="retry-button" ng-click='ctrl.newGame()'>Try again</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="game-explanation">
+    <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
-</div>
+  <hr>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
   <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+    <strong class="important">NOTE:</strong> This game was written using AngularJS following a tutorial from fullstack.io.
   </p>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+  <hr>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
 </div>
-
-<div class="footer">
-  <p>♥ from the Yeoman team</p>
-</div> -->

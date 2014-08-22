@@ -1,4 +1,3 @@
-
 describe('Grid Module', function() {
   describe('GridService', function() {
     //Inject Grid module into this test
@@ -27,7 +26,17 @@ describe('Grid Module', function() {
         gridService.grid = grid;
         gridService.buildEmptyGameBoard();
         expect(gridService.grid).toEqual(nullArr);
-      })
+      });
+
+      it('should clear out the tiles array with nulls', function() {
+        var tiles = [];
+        for (var x = 0; x < 16; x++) {
+          tiles.push(x);
+        }
+        gridService.tiles = tiles;
+        gridService.buildEmptyGameBoard();
+        expect(gridService.tiles).toEqual(nullArr);
+      });
 
     });
   });

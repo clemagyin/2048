@@ -1,8 +1,8 @@
-<div class="game">
+<div id="game-{{ ngModel.gameSize }}">
 	<div class="grid-container">
 		<div class="grid-cell" ng-repeat="cell in ngModel.grid track by $index"></div>
 	</div>
 	<div class="tile-container">
-		<div tile ng-model='title in ngNodel.tiles track by $index'></div>
+		<div tile ng-model='tile' ng-model='tile in ngModel.tiles track by $index'></div>
 	</div>
 </div>
